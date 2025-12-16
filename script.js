@@ -31,7 +31,7 @@ function mdToHtml(md) {
 
 // json
 async function loadIndex(type) {
-    const url = `https://raw.githubusercontent.com/tug-g/tug-g.github.io/main/${type}/index.json`;
+    const url = `https://raw.githubusercontent.com/tug-g/decredim.github.io/main/${type}/index.json`;
     try {
         const res = await fetch(url);
         if (!res.ok) return [];
@@ -43,7 +43,7 @@ async function loadIndex(type) {
 
 // fetch md
 async function loadMarkdown(type, filename) {
-    const url = `https://raw.githubusercontent.com/tug-g/tug-g.github.io/main/${type}/${filename}`;
+    const url = `https://raw.githubusercontent.com/tug-g/decredim.github.io/main/${type}/${filename}`;
     const res = await fetch(url);
     return await res.text();
 }
