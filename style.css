@@ -116,3 +116,32 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+.index-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.folio {
+    background: var(--post-bg);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.folio h2 {
+    margin-bottom: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .index-grid {
+        grid-template-columns: 1fr;
+    }
+}
