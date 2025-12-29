@@ -7,41 +7,48 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body data-theme="light">
-    <header>
-        <h1>Estariot</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="posts.html">Posts</a>
-            <a href="extras.html">Extras</a>
+
+    <header class="masthead">
+        <h1>ESTARIOT</h1>
+        <p class="subtitle">
+            Notes on mineself, histories, and related matters
+        </p>
+
+        <nav class="primary-nav">
+            <a href="index.html">Index</a>
+            <a href="posts.html">Entries</a>
+            <a href="extras.html">Miscellanea</a>
         </nav>
-        <button id="theme-toggle" class="theme-btn">Dark Mode</button>
     </header>
 
     <main>
-        <section id="home" class="home-intro">
-            <h2>Welcome</h2>
-            <p>This blog shares posts and extra content. Explore the latest updates below.</p>
-            <div class="intro-buttons">
-                <a class="btn" id="latest-post-btn" href="posts.html">Latest Post</a>
-                <a class="btn" id="latest-extra-btn" href="extras.html">Latest Extra</a>
-            </div>
+
+        <section class="notice">
+            <p>
+                This site contains personal writings and commentary.
+                Entries are arranged chronologically and reflect ongoing work and study.
+            </p>
         </section>
 
-        <section id="posts" class="content-section">
-            <h2>Posts</h2>
+        <section id="recent-entries" class="content-section">
+            <h2>Recent Entries</h2>
             <div id="list-container" data-type="posts"></div>
         </section>
 
-        <section id="extras" class="content-section">
-            <h2>Extras</h2>
+        <section id="recent-miscellanea" class="content-section">
+            <h2>Miscellanea</h2>
             <div id="list-container" data-type="extras"></div>
         </section>
+
     </main>
 
-    <footer>
-        <p>Estariot</p>
+    <footer class="imprint">
+        <p>
+            Estariot · Compiled and maintained by H.
+        </p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
