@@ -17,6 +17,7 @@ body {
 /* Paper & Ink */
 
 :root {
+    --mono-main: "Inconsolata", "IBM Plex Mono", "Courier New", monospace;
     --paper: #f4f1ec;
     --paper-dark: #e6e2da;
     --ink: #1c1b18;
