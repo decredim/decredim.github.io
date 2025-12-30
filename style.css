@@ -150,3 +150,17 @@ footer {
 .folio {
     min-height: 100%;
 }
+
+.card {
+    padding: 12px;
+}
+
+.card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.card-date {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
