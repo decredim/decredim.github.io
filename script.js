@@ -106,28 +106,32 @@ const MAX_ITEMS = {
     extras: 4
 };
 
-document.querySelectorAll('[data-type]').forEach(container => {
-    const type = container.dataset.type;
+if (document.body.classList.contains("list-page")) {
+    document.querySelectorAll('[data-type]').forEach(container => {
+        const type = container.dataset.type;
 
-    loadIndex(type).then(items => {
-        items
-            .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .slice(0, MAX_ITEMS[type] || items.length)
-            .forEach(item => {
-                const div = document.createElement("div");
-                div.classList.add("card");
+        loadIndex(type).then(items => {
+            container.innerHTML = "";
 
-                div.innerHTML = `
-                    <a href="view.html?type=${type}&file=${item.filename}">
-                        <h4>${item.title}</h4>
-                        <p class="card-date">${item.date}</p>
-                    </a>
-                `;
+            items
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, MAX_ITEMS[type] || items.length)
+                .forEach(item => {
+                    const div = document.createElement("div");
+                    div.classList.add("card");
 
-                container.appendChild(div);
-            });
+                    div.innerHTML = `
+                        <a href="view.html?type=${type}&file=${item.filename}">
+                            <h4>${item.title}</h4>
+                            <p class="card-date">${item.date}</p>
+                        </a>
+                    `;
+
+                    container.appendChild(div);
+                });
+        });
     });
-});
+}
 
 // view page
 const viewContent = document.getElementById("view-content");
