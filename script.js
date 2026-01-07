@@ -31,9 +31,8 @@ function mdToHtml(md) {
 
 // json
 async function loadIndex(type) {
-    const url = `https://raw.githubusercontent.com/decredim/decredim.github.io/main/${type}/index.json`;
     try {
-        const res = await fetch(url);
+        const res = await fetch(`/${type}/index.json`);
         if (!res.ok) return [];
         return await res.json();
     } catch {
@@ -43,8 +42,7 @@ async function loadIndex(type) {
 
 // fetch md
 async function loadMarkdown(type, filename) {
-    const url = `https://raw.githubusercontent.com/decredim/decredim.github.io/main/${type}/${filename}`;
-    const res = await fetch(url);
+    const res = await fetch(`/${type}/${filename}`);
     return await res.text();
 }
 
