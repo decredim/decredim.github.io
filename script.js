@@ -57,7 +57,7 @@ async function loadLatest() {
     let extras = await loadIndex("extras");
 
     posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-    extras = extras.sort((a,b) => Date(b.date) - new Date(a.date));
+    extras = extras.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     if (postsArea) {
         postsArea.innerHTML = posts
@@ -112,6 +112,3 @@ if (viewContent) {
 
 // load
 loadLatest();
-
-loadLatest();
-
