@@ -101,9 +101,7 @@ document.getElementById("submit-post").onclick = async () => {
     const mdFile =
 `# ${title}
 
-**Tags:** ${tags}
-
----
+${tags ? `**Tags:** ${tags}\n\n` : ""}---
 
 ${content}
 `;
@@ -114,11 +112,6 @@ ${content}
         unescape(encodeURIComponent(mdFile))
     );
 
-    const body = {
-        message: `Add ${type.slice(0, -1)}: ${title}`,
-        content: base64Content
-    };
-
     try {
         const response = await fetch(url, {
             method: "PUT",
@@ -126,7 +119,10 @@ ${content}
                 "Authorization": `Bearer ${ghToken}`,
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({
+                message: `Add ${type.slice(0, -1)}: ${title}`,
+                content: base64Content
+            })
         });
 
         if (!response.ok) {
@@ -134,7 +130,7 @@ ${content}
             throw new Error(error.message || "Upload failed");
         }
 
-        // update index.json
+        // update index.json — canonical format
         await updateIndex(type, {
             title,
             filename,
