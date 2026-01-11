@@ -231,3 +231,14 @@ footer {
     color: var(--ink-muted);
     border-top: 1px solid var(--rule);
 }
+
+/* some others */
+
+.content-section h2 {
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.content-section p {
+    line-height: 1.6;
+}
